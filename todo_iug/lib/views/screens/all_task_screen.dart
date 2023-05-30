@@ -1,0 +1,19 @@
+
+
+import 'package:flutter/material.dart';
+import 'package:todo_iug/data/data_source.dart';
+import 'package:todo_iug/views/widgets/task_widget.dart';
+
+class AllTasksScreen extends StatelessWidget {
+   Function function;
+   AllTasksScreen(this.function,);
+  
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: DataSource.tasks.length,
+      itemBuilder:(context,index){
+        return TaskWidget(DataSource.tasks[index],function);
+      } );
+  }
+}
